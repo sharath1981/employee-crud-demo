@@ -50,9 +50,7 @@ public class EmployeeService {
 		final var inputStream = EmployeeService.class.getResourceAsStream("/json/employees.json");
 		try {
 			final var employees = mapper.readValue(inputStream, typeReference);
-			for (final var employee : employees) {
-				create(employee);
-			}
+            repository.saveAll(employees);
 			log.info("Employees Saved!");
 		} catch (IOException e){
 			log.error("Unable to save Employees: ", e.getMessage());

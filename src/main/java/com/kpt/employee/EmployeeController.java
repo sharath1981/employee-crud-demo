@@ -24,7 +24,8 @@ public class EmployeeController {
 
     @GetMapping
     public ResponseEntity<Iterable<Employee>> findAll() {
-        return ResponseEntity.ok().body(employeeService.findAll());
+        return ResponseEntity.ok()
+                             .body(employeeService.findAll());
     }
 
     @GetMapping("{id}")
