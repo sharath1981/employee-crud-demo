@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 
 
 @RequiredArgsConstructor
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("*")
 @RestController
 @RequestMapping("api/v1/employees")
 public class EmployeeController {
